@@ -6,7 +6,12 @@
 
   <script type="text/javascript">
     var recognizing;
-    var recognition = new SpeechRecognition();
+      var recognition = root.SpeechRecognition ||
+                          root.webkitSpeechRecognition ||
+                          root.mozSpeechRecognition ||
+                          root.msSpeechRecognition ||
+                          root.oSpeechRecognition;
+    
     recognition.continuous = true;
     reset();
     recognition.onend = reset;
