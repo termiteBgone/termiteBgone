@@ -6,12 +6,8 @@
 
   <script type="text/javascript">
     var recognizing;
-      var recognition = root.SpeechRecognition ||
-                          root.webkitSpeechRecognition ||
-                          root.mozSpeechRecognition ||
-                          root.msSpeechRecognition ||
-                          root.oSpeechRecognition;
-    
+    var recognition = SpeechRecognition.SpeechRecognition();
+      
     recognition.continuous = true;
     reset();
     recognition.onend = reset;
